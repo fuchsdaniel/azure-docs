@@ -29,6 +29,7 @@ If you're receiving errors importing your OpenAPI document, make sure you've val
 
 ### <a name="open-api-general"> </a>General
 
+-   If a parameter is defined to be IN: PATH at the OpenAPI specification, it needs to be included in the path itself. Example: "/Customers/{customerId}"
 -   Required parameters across both path and query must have unique names. (In OpenAPI a parameter name only needs to be unique within a location, for example path, query, header. However, in API Management we allow operations to be discriminated by both path and query parameters (which OpenAPI doesn't support). That's why we require parameter names to be unique within the entire URL template.)
 -   **\$ref** pointers can't reference external files.
 -   **x-ms-paths** and **x-servers** are the only supported extensions.
